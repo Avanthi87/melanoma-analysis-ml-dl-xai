@@ -2,8 +2,6 @@
 
 An end-to-end MSc Data Science project exploring melanoma prediction using **clinical data** and **dermoscopic images**. The project combines classical machine learning, neural networks, CNNs, SHAP explainability, feature engineering, and class-imbalance analysis.
 
-![Project workflow](assets/workflow.png)
-
 ## Project objectives
 
 - Analyse clinical melanoma data and build a Logistic Regression baseline.
@@ -29,13 +27,9 @@ An end-to-end MSc Data Science project exploring melanoma prediction using **cli
 
 The original matched image subset contained **1,835 non-melanoma** and **175 melanoma** images. A model could therefore achieve high accuracy while missing the minority disease class. The balanced experiment showed the trade-off clearly: overall accuracy fell, but melanoma detection improved.
 
-![CNN confusion matrix](assets/cnn_confusion_matrix.png)
-
 ## Explainable AI
 
 SHAP was used to identify influential clinical predictors. Tumor thickness, age, and ulceration were among the most important features and were used in a risk-score experiment.
-
-![Risk score distribution](assets/risk_score_distribution.png)
 
 ## Repository structure
 
@@ -43,29 +37,32 @@ SHAP was used to identify influential clinical predictors. Tumor thickness, age,
 .
 ├── README.md
 ├── PROJECT_SUMMARY.md
+├── melanoma_analysis.py
 ├── requirements.txt
-├── notebooks/
-│   ├── melanoma_analysis.ipynb
-│   └── melanoma_analysis_outputs.html
-├── assets/
-│   ├── workflow.png
-│   ├── cnn_confusion_matrix.png
-│   └── risk_score_distribution.png
+├── .gitignore
 └── data/
     └── README.md
 ```
+
+## Code
+
+The complete cleaned project workflow is available in [`melanoma_analysis.py`](melanoma_analysis.py). It covers clinical EDA, Logistic Regression, ANN modelling, SHAP explainability, risk-score feature engineering, full matched-image CNN training, class-weighted CNN evaluation, and the balanced-dataset CNN experiment.
 
 ## Tools used
 
 Python, pandas, NumPy, Matplotlib, Seaborn, scikit-learn, TensorFlow/Keras, SHAP, and OpenCV.
 
-## Running the notebook
+## Running the project
 
 1. Create a Python environment and install the packages in `requirements.txt`.
 2. Obtain the clinical melanoma dataset and HAM10000 metadata/images.
 3. Place the files in your working environment.
-4. Update the image-folder paths if your directory structure differs from the original Colab setup.
-5. Run `notebooks/melanoma_analysis.ipynb`.
+4. Update the image-folder paths in `melanoma_analysis.py` if your directory structure differs from the original Colab setup.
+5. Run the sections in sequence in a Python/Jupyter environment.
+
+## Data availability
+
+The large HAM10000 image files are intentionally not stored in this repository. See [`data/README.md`](data/README.md) for the expected inputs.
 
 ## Limitations
 
