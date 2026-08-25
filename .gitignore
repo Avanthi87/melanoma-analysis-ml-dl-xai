@@ -1,0 +1,10 @@
+# Data and generated files
+*.zip
+*.h5
+*.keras
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+data/*.csv
+data/*.jpg
+data/*.png
